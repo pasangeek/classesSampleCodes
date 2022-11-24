@@ -22,7 +22,12 @@ val person: Person = Person("john","smith")
 
 
 }
-class Person(var firstName:String ,var  lastName :String){
+open class A
+class B :A(){
+
+}
+
+class Person(var firstName:String ,var  lastName :String):Circle(10){
 
     var fullName:String = ""
     set(value) {
@@ -36,7 +41,7 @@ class Person(var firstName:String ,var  lastName :String){
 
 }
 
-    class  Circle(var radius:Double){
+   open class  Circle(var radius:Double){
 
         constructor(name: String):this( 1.0)
         constructor(diameter:Int):this(diameter/2.0)
