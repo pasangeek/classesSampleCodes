@@ -18,13 +18,31 @@ val person: Person = Person("john","smith")
     person.fullName = "john1 smith1"
     println(person.firstName)
     println(person.lastName)
+    
+    val  b = B()
+    b.fullName()
 
 
 
 }
-open class A
+open class A{
+    open  var firstName:String = "james"
+
+
+open fun fullName(){
+    println("super class Full name")
+}
+}
+
 class B :A(){
 
+    override  var firstName:String
+    get() = super.firstName
+    set(value){}
+
+    override  fun fullName(){
+super.fullName()
+    }
 }
 
 class Person(var firstName:String ,var  lastName :String):Circle(10){
